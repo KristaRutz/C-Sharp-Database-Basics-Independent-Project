@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-<h1>Welcome to the Client Organizer!</h1>
-<p>@Html.ActionLink("See all clients", "Index", "Clients")</p>
-<p>@Html.ActionLink("See all employees", "Index", "Employees")</p>
+<h1>Welcome to <span class="logo-text">Client Organizer</span> for your organization!</h1>
+<p class="btn btn-light">@Html.ActionLink("See your organization's clients", "Index", "Clients")</p>
+<p class="btn btn-light">@Html.ActionLink("See your organization's employees", "Index", "Employees")</p>
 
