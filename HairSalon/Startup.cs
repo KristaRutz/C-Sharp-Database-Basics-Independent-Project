@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using ToDoList.Models;
+using Organization.Models;
 
-namespace ToDoList
+namespace Organization
 {
   public class Startup
   {
@@ -24,13 +24,14 @@ namespace ToDoList
     {
       services.AddMvc();
       services.AddEntityFrameworkMySql()
-        .AddDbContext<ToDoListContext>(options => options
+        .AddDbContext<OrganizationContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
     }
 
     public void Configure(IApplicationBuilder app)
     {
       app.UseDeveloperExceptionPage();
+      app.UseStaticFiles();
 
       app.UseMvc(routes =>
       {
@@ -45,5 +46,5 @@ namespace ToDoList
       });
     }
   }
-  
+
 }
