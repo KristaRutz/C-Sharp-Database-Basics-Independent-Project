@@ -1,16 +1,16 @@
-CREATE DATABASE `krista_rutz`
+CREATE DATABASE `krista_rutz`;
 USE krista_rutz;
 CREATE TABLE `parents` (
   `ParentId` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ParentId`)
-)
+);
 CREATE TABLE `children` (
   `ChildId` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) DEFAULT NULL,
   `ParentId` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ChildId`)
-)
+);
 CREATE TABLE `grandchildren` (
   `GrandchildId` int(11) NOT NULL AUTO_INCREMENT,
   `ChildId` int(11) NOT NULL DEFAULT '0',
@@ -18,4 +18,4 @@ CREATE TABLE `grandchildren` (
   `Description` varchar(255) DEFAULT NULL,
   `TimeCreated` datetime NOT NULL,
   PRIMARY KEY (`GrandchildId`)
-)
+);
