@@ -1,18 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
-using Organization.Models;
+using ZineMachine.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace Organization.Controllers
+namespace ZineMachine.Controllers
 {
   public class UsersController : Controller
   {
 
-    private readonly OrganizationContext _db;
+    private readonly ZineMachineContext _db;
 
-    public UsersController(OrganizationContext db)
+    public UsersController(ZineMachineContext db)
     {
       _db = db;
     }
@@ -39,7 +39,7 @@ namespace Organization.Controllers
     public ActionResult Details(int id)
     {
       User thisUser = _db.Users.FirstOrDefault(catogory => catogory.UserId == id);
-      thisUser.Posts = _db.Posts.Where(post => post.UserId == id).ToList();
+      thisUser.Zines = _db.Zines.Where(zine => zine.UserId == id).ToList();
       return View(thisUser);
     }
 

@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace Organization.Models
+namespace ZineMachine.Models
 {
-  public class OrganizationContext : DbContext
+  public class ZineMachineContext : DbContext
   {
     public virtual DbSet<User> Users { get; set; }
     public DbSet<Zine> Zines { get; set; }
 
 
-    public OrganizationContext(DbContextOptions options) : base(options) { }
+    public ZineMachineContext(DbContextOptions options) : base(options) { }
   }
 }

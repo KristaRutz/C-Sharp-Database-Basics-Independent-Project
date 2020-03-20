@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Organization.Models
+namespace ZineMachine.Models
 {
   public class User
   {
@@ -11,6 +11,6 @@ namespace Organization.Models
 
     public int UserId { get; set; }
     public string Name { get; set; }
-    public virtual ICollection<ZinePoZineget; set; }
+    public virtual ICollection<Zine> Zines { get; set; }
   }
 }

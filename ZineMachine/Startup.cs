@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using Organization.Models;
+using ZineMachine.Models;
 
-namespace Organization
+namespace ZineMachine
 {
   public class Startup
   {
@@ -24,7 +24,7 @@ namespace Organization
     {
       services.AddMvc();
       services.AddEntityFrameworkMySql()
-        .AddDbContext<OrganizationContext>(options => options
+        .AddDbContext<ZineMachineContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
     }
 

@@ -1,26 +1,26 @@
 using Microsoft.AspNetCore.Mvc;
-using Organization.Models;
+using ZineMachine.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Organization.Controllers
+namespace ZineMachine.Controllers
 {
-  public class PostsController : Controller
+  public class ZinesController : Controller
   {
 
-    private readonly OrganizationContext _db;
+    private readonly ZineMachineContext _db;
 
-    public PostsController(OrganizationContext db)
+    public ZinesController(ZineMachineContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      List<Post> model = _db.Posts.Include(posts => posts.User).ToList();
-      ViewBag.UserCount = _db.Posts.ToList().Count;
+      List<Zine> model = _db.Zines.Include(zines => zines.User).ToList();
+      ViewBag.UserCount = _db.Zines.ToList().Count;
       return View(model);
     }
 
@@ -31,46 +31,46 @@ namespace Organization.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Post post)
+    public ActionResult Create(Zine zine)
     {
-      _db.Posts.Add(post);
+      _db.Zines.Add(zine);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      Post thisPost = _db.Posts.FirstOrDefault(post => post.PostId == id);
-      ViewBag.UserLiaison = _db.Users.FirstOrDefault(user => user.UserId == thisPost.UserId);
-      return View(thisPost);
+      Zine thisZine = _db.Zines.FirstOrDefault(zine => zine.ZineId == id);
+      ViewBag.UserLiaison = _db.Users.FirstOrDefault(user => user.UserId == thisZine.UserId);
+      return View(thisZine);
     }
 
     public ActionResult Edit(int id)
     {
-      var thisPost = _db.Posts.FirstOrDefault(posts => posts.PostId == id);
-      ViewBag.UserId = new SelectList(_db.Users, "UserId", "Name", thisPost.UserId);
-      return View(thisPost);
+      var thisZine = _db.Zines.FirstOrDefault(zines => zines.ZineId == id);
+      ViewBag.UserId = new SelectList(_db.Users, "UserId", "Name", thisZine.UserId);
+      return View(thisZine);
     }
 
     [HttpPost]
-    public ActionResult Edit(Post post)
+    public ActionResult Edit(Zine zine)
     {
-      _db.Entry(post).State = EntityState.Modified;
+      _db.Entry(zine).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Delete(int id)
     {
-      var thisPost = _db.Posts.FirstOrDefault(posts => posts.PostId == id);
-      return View(thisPost);
+      var thisZine = _db.Zines.FirstOrDefault(zines => zines.ZineId == id);
+      return View(thisZine);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      var thisPost = _db.Posts.FirstOrDefault(posts => posts.PostId == id);
-      _db.Posts.Remove(thisPost);
+      var thisZine = _db.Zines.FirstOrDefault(zines => zines.ZineId == id);
+      _db.Zines.Remove(thisZine);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

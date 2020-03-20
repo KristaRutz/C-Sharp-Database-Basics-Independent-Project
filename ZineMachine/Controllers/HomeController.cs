@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Organization.Controllers
+namespace ZineMachine.Controllers
 {
   public class HomeController : Controller
   {

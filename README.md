@@ -1,6 +1,6 @@
 # User-Zine Relationship Tracker (C# Web Application)
 
-#### A web-based application to organize users and zines, where the user can input new hires and create zines under the emoloyees, hosted on [GitHub](https://github.com/KristaRutz/C-Sharp-Database-Basics-Independent-Project). _Last Updated 03.13.2020._
+#### A web-based application to organize users and zines, hosted on [GitHub](https://github.com/KristaRutz/C-Sharp-Database-Basics-Independent-Project). _Last Updated 03.20.2020._
 
 #### By _**Krista Rutz**_
 
