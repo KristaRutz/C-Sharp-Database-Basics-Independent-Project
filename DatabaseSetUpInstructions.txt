@@ -1,21 +1,21 @@
-CREATE DATABASE `krista_rutz`;
-USE krista_rutz;
-CREATE TABLE `employees` (
-  `EmployeeId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE DATABASE `zine_machine`;
+USE zine_machine;
+CREATE TABLE `users` (
+  `UserId` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`EmployeeId`)
+  PRIMARY KEY (`UserId`)
 );
-CREATE TABLE `clients` (
-  `ClientId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `zines` (
+  `ZineId` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) DEFAULT NULL,
-  `EmployeeId` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ClientId`)
+  `UserId` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ZineId`)
 );
-CREATE TABLE `client_items` (
-  `ClientItemId` int(11) NOT NULL AUTO_INCREMENT,
-  `ClientId` int(11) NOT NULL DEFAULT '0',
+CREATE TABLE `posts` (
+  `PostId` int(11) NOT NULL AUTO_INCREMENT,
+  `ZineId` int(11) NOT NULL DEFAULT '0',
   `Name` varchar(45) DEFAULT NULL,
   `Description` varchar(255) DEFAULT NULL,
   `TimeCreated` datetime NOT NULL,
-  PRIMARY KEY (`ClientItemId`)
+  PRIMARY KEY (`PostId`)
 );

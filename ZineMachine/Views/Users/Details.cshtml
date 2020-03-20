@@ -1,0 +1,31 @@
+@{
+    Layout = "_Layout";
+}
+
+@using Organization.Models;
+@model Organization.Models.User;
+
+
+<h2>@Html.DisplayFor(model => model.Name)</h2>
+<hr />
+<h4>User Details</h4>
+<p>User ID Number: @Html.DisplayFor(model => model.UserId)</p>
+
+@if (@Model.Zines.Count == 0)
+{
+    <h4>No zines yet. @Html.ActionLink("Add a zine?", "Create", "Zines")</h4>
+}
+else 
+{
+<h4>Zines</h4>
+<ul>
+    @foreach (Zine zine in @Model.Zines)
+    {
+        <li>@zine.Name</li>
+    }
+</ul>
+}
+<br>
+<p class="btn btn-light">@Html.ActionLink("Back to list", "Index")</p>
+<p class="btn btn-light">@Html.ActionLink("Edit User", "Edit", new { id = Model.UserId })</p>
+<p class="btn btn-light">@Html.ActionLink("Delete User", "Delete", new { id = Model.UserId })</p>

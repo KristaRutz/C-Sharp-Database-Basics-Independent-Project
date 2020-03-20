@@ -2,9 +2,9 @@
   Layout = "_Layout";
 }
 
-@model Organization.Models.Employee
+@model Organization.Models.User
 
-<h2>New employee</h2>
+<h2>New user</h2>
 <hr>
 @using (Html.BeginForm())
 {
@@ -12,6 +12,6 @@
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name, new {@Class = "form-control"})
   </div>
-  <input class="btn btn-light form-group" type="submit" value="Add new employee" />
+  <input class="btn btn-light form-group" type="submit" value="Add new user" />
 }
 <p class="btn btn-light">@Html.ActionLink("Cancel", "Index")</p>

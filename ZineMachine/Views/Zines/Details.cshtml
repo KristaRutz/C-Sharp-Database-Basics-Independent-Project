@@ -1,0 +1,17 @@
+@{
+    Layout = "_Layout";
+}
+
+@model Organization.Models.Zine
+
+<h2>@Html.DisplayFor(model => model.Name)</h2>
+<hr />
+<h4>Zine Details</h4>
+<ul>
+  <li>Zine ID Number: @Html.DisplayFor(model => model.UserId)</li>
+  <li>User Liaison: @ViewBag.UserLiaison.Name</li>
+</ul>
+  @* DisplayNameFor() displays property name while DisplayFor() displays the value of that property. *@
+<p class="btn btn-light">@Html.ActionLink("Back to list", "Index")</p>
+<p class="btn btn-light">@Html.ActionLink("Edit Zine", "Edit", new { id = Model.ZineId })</p>
+<p class="btn btn-light">@Html.ActionLink("Delete Zine", "Delete", new { id = Model.ZineId })</p>

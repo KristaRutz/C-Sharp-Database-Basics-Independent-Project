@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model Organization.Models.Client
+@model Organization.Models.Zine
 
 <h2>Add a new task</h2>
 <hr>
@@ -13,9 +13,9 @@
     @Html.TextBoxFor(model => model.Name, new {@Class = "form-control"})
   </div>
   <div class="form-group">
-    @Html.LabelFor(model => model.Employee)
-    @Html.DropDownList("EmployeeId", ViewBag.EmployeeId, "Select Employee", new { @class = "form-control form-control-sm" })
+    @Html.LabelFor(model => model.User)
+    @Html.DropDownList("UserId", ViewBag.UserId, "Select User", new { @class = "form-control form-control-sm" })
   </div>
-  <input class="btn btn-light form-group" type="submit" value="Add client" />
+  <input class="btn btn-light form-group" type="submit" value="Add zine" />
 }
 <p class="btn btn-light">@Html.ActionLink("Cancel", "Index")</p>

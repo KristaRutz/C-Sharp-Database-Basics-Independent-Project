@@ -1,12 +1,12 @@
-# Employee-Client Relationship Tracker (C# Web Application)
+# User-Zine Relationship Tracker (C# Web Application)
 
-#### A web-based application to organize employees and clients, where the user can input new hires and create clients under the emoloyees, hosted on [GitHub](https://github.com/KristaRutz/C-Sharp-Database-Basics-Independent-Project). _Last Updated 03.13.2020._
+#### A web-based application to organize users and zines, where the user can input new hires and create zines under the emoloyees, hosted on [GitHub](https://github.com/KristaRutz/C-Sharp-Database-Basics-Independent-Project). _Last Updated 03.13.2020._
 
 #### By _**Krista Rutz**_
 
 ## Description
 
-This application, utilizing an MVC framework, lets the user, in this case a hair salon, keep track of employees and their clients. Employees can be added dynamically in a form, and clients can be listed under each employee account. The app implements this with C#, .NET Core, and SQL.
+This application, utilizing an MVC framework, keeps track of users and their zines. Users can be added dynamically in a form, and zines can be listed under each user account. The app implements this with C#, .NET Core, and SQL.
 
 This project uses SQL, Entity Framework, RESTful routing, the Razor View Engine, and MVC conventions. It was created for the Epicodus week 11 friday independent project, on week 4 of C# and .NET course: Database Basics.
 
@@ -36,7 +36,7 @@ _This program also makes use of SQL databases. We recommend using MySQL Workbenc
     - In Import Options select Import from Self-Contained File.
     - Navigate to the sql file at 'DumpStructure.sql' in the root directory of this project.
     - Under Default Schema to be Imported To, select the New button.
-    - Enter the desired name of your database. _The program is currently set to look for a database called 'krista_rutz'. If you use a different name, you will need to change the connection string in appsettings.json to reflect this._
+    - Enter the desired name of your database. _The program is currently set to look for a database called 'zine_machine'. If you use a different name, you will need to change the connection string in appsettings.json to reflect this._
     - Click Ok.
     - Click Start Import.
     - Reopen the Navigator > Schemas tab. Right click and select Refresh All to see the database appear.
@@ -65,7 +65,7 @@ _This program also makes use of SQL databases. We recommend using MySQL Workbenc
 - [x] The project demonstrates understanding of this week's concepts.
 - [x] The project is in a polished, portfolio-quality state.
 - [x] Project uses two or more controllers.
-- [x] GET and POST requests/responses are used successfully.
+- [x] GET and ZINE requests/responses are used successfully.
 - [x] MVC routes follow RESTful conventions.
 - [x] Logic is easy to understand.
 - [x] Build files are included in .gitignore file and are not be tracked by Git
@@ -73,17 +73,17 @@ _This program also makes use of SQL databases. We recommend using MySQL Workbenc
 
 ## User Stories
 
-| As a _User-Type_,      | I want...                                                                                                                        | so that...                                          |
-| :--------------------- | :------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------- |
-| As the business owner  | I want employees that I add to be stored in a database                                                                           | so that I can access them as often as I need        |
-| As the business owner, | I want to add new employees                                                                                                      | so that I can view the complete list                |  |
-| As the salon owner,    | I need to be able to select a stylist, see their details, and see a list of all clients that belong to that stylist              | to stay organized                                   |
-| As the business owner, | I want to see the clients belonging to those employees                                                                           | to simplify payment accounts                        |
-| As the salon owner,    | I need to be able to add new clients to a specific stylist (I should not be able to add a client if no stylists have been added) | so that I don't have unassigned clients by mistake. |
-| As the business owner, | I want name and preferred employee for clients visible                                                                           | so that my tracker is useful from both sides        |
-| As the business owner, | I want a splash page                                                                                                             | so that I can access any sides of my site           |
-| As the business owner, | I want to be able to delete clients or employees                                                                                 | in case of changes to the business                  |
-| As the business owner, | I want to be able to edit clients or employees                                                                                   | in case of changes, or user error                   |
+| As a _User-Type_,                 | I want...                                                                                                              | so that...                                        |
+| :-------------------------------- | :--------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------ |
+| As the site and database manager  | I want users that I add to be stored in a database                                                                     | so that I can access them as often as I need      |
+| As the site and database manager, | I want to add new users                                                                                                | so that I can view the complete list              |  |
+| As the salon owner,               | I need to be able to select a user, see their details, and see a list of all zines that belong to that user            | to stay organized                                 |
+| As the site and database manager, | I want to see the zines belonging to those users                                                                       | to simplify payment accounts                      |
+| As the salon owner,               | I need to be able to add new zines to a specific user (I should not be able to add a zine if no users have been added) | so that I don't have unassigned zines by mistake. |
+| As the site and database manager, | I want name and preferred user for zines visible                                                                       | so that my tracker is useful from both sides      |
+| As the site and database manager, | I want a splash page                                                                                                   | so that I can access any sides of my site         |
+| As the site and database manager, | I want to be able to delete zines or users                                                                             | in case of changes to the business                |
+| As the site and database manager, | I want to be able to edit zines or users                                                                               | in case of changes, or user error                 |
 
 ## Known Bugs
 

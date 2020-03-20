@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Organization.Models;
+@model List<Organization.Models.Zine>;
+
+<h2>Zines</h2>
+<hr>
+@if (@Model.Count == 0)
+{
+  <h3>No zines have been added yet!</h3>
+} 
+
+<ul>
+  @foreach(Zine zine in Model)
+  {
+      <li>@Html.ActionLink($"{zine.Name}", "Details", new { id = zine.ZineId }) | @zine.User.Name</li>
+  }
+</ul>
+
+@if (ViewBag.UserCount > 0)
+{
+<p class="btn btn-light">@Html.ActionLink("Add new zine", "Create")</p>
+}
+<p class="btn btn-light">@Html.ActionLink("Home", "Index", "Home")</p>
