@@ -5,22 +5,27 @@
 @using Organization.Models;
 @model Organization.Models.Employee;
 
-<h2>Employee Details</h2>
+
+<h1>@Html.DisplayFor(model => model.Name)</h1>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)<h3>
+<h2>Employee Details</h2>
+<p>Employee Id No.: @Html.DisplayFor(model => model.EmployeeId)</p>
 
+@if (@Model.Clients.Count == 0)
+{
+    <h4>No clients yet. @Html.ActionLink("Add a client?", "Create", "Clients")</h4>
+}
+else 
+{
+<h4>Clients:</h4>
 <ul>
-    @if (@Model.Clients.Count == 0)
-    {
-        <p>no clients found</p>
-    }
-
     @foreach (Client client in @Model.Clients)
     {
         <li>@client.Name</li>
     }
 </ul>
-
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Edit Employee", "Edit", new { id = Model.EmployeeId })</p>
-<p>@Html.ActionLink("Delete Employee", "Delete", new { id = Model.EmployeeId })</p>
+}
+<br>
+<p class="btn btn-light">@Html.ActionLink("Back to list", "Index")</p>
+<p class="btn btn-light">@Html.ActionLink("Edit Employee", "Edit", new { id = Model.EmployeeId })</p>
+<p class="btn btn-light">@Html.ActionLink("Delete Employee", "Delete", new { id = Model.EmployeeId })</p>

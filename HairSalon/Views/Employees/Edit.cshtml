@@ -4,18 +4,17 @@
 
 @model Organization.Models.Employee
 
-<h2>Edit</h2>
-
-<h4>Edit the name of this employee: @Html.DisplayFor(model => model.Name)</h4>
+<h2>Editing employee <strong>@Html.DisplayFor(model => model.Name)</strong></h2>
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.EmployeeId)
-
+  <div class="form-group">
+  @Html.HiddenFor(model => model.EmployeeId)
+  </div>
+  <div class="form-group">
     @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)
-
-    <input type="submit" value="Save" />
+    @Html.TextBoxFor(model => model.Name, new {@Class = "form-control"})
+  </div>
+  <input class="btn btn-light form-group" type="submit" value="Save" />
 }
-
-<p>@Html.ActionLink("Cancel", "Index")</p>
+<p class="btn btn-light">@Html.ActionLink("Cancel", "Index")</p>

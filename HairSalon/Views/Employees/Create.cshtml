@@ -4,12 +4,13 @@
 
 @model Organization.Models.Employee
 
-<h4>Add a new task</h4>
+<h2>New employee</h2>
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
-
-  <input type="submit" value="Add new employee of task" />
+  <div class="form-group">
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name, new {@Class = "form-control"})
+  </div>
+  <input class="btn btn-light form-group" type="submit" value="Add new employee" />
 }
-<p>@Html.ActionLink("Show all employees", "Index")</p>
+<p class="btn btn-light">@Html.ActionLink("Cancel", "Index")</p>
