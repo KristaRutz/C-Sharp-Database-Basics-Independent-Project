@@ -6,9 +6,9 @@
 @model Organization.Models.Employee;
 
 
-<h1>@Html.DisplayFor(model => model.Name)</h1>
+<h2>@Html.DisplayFor(model => model.Name)</h2>
 <hr />
-<h2>Employee Details</h2>
+<h4>Employee Details</h4>
 <p>Employee ID Number: @Html.DisplayFor(model => model.EmployeeId)</p>
 
 @if (@Model.Clients.Count == 0)
@@ -17,7 +17,7 @@
 }
 else 
 {
-<h4>Clients:</h4>
+<h4>Clients</h4>
 <ul>
     @foreach (Client client in @Model.Clients)
     {

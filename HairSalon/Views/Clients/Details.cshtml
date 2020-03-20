@@ -4,9 +4,9 @@
 
 @model Organization.Models.Client
 
-<h1>@Html.DisplayFor(model => model.Name)</h1>
+<h2>@Html.DisplayFor(model => model.Name)</h2>
 <hr />
-<h2>Client Details</h2>
+<h4>Client Details</h4>
 <ul>
   <li>Client ID Number: @Html.DisplayFor(model => model.EmployeeId)</li>
   <li>Employee Liaison: @ViewBag.EmployeeLiaison.Name</li>
