@@ -36,6 +36,22 @@ Download or clone the repository to run this program locally! _This program requ
 - HTML with Razor
 - CSS: Custom and Bootstrap
 
+## Specifications
+
+- Database table and column names follow both the specific requirements for this project and general .NET naming conventions.
+- Instructions for re-creating your database are thorough and clear.
+- There is a one-to-many relationship set up correctly in the database.
+- CREATE functionality is included for one class and CREATE and VIEW functionality are included for the other class.
+- Entity is used for communication with the database
+- The project demonstrates understanding of this week's concepts.
+- The project is in a polished, portfolio-quality state.
+- Project uses two or more controllers.
+- GET and POST requests/responses are used successfully.
+- MVC routes follow RESTful conventions.
+- Logic is easy to understand.
+- Build files are included in .gitignore file and are not be tracked by Git
+- Code and Git documentation follows best practices (descriptive variables names, proper indentation and spacing, separation between front and back-end logic, detailed commit messages in the correct tense, and a well-formatted README).
+
 ## User Stories
 
 | As a _User-Type_,                                   | I want...                                                                                          | so that...                                                                                           |
