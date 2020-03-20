@@ -3,13 +3,12 @@ using ToDoList.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 using System;
 
 namespace ToDoList.Controllers
 {
-    public class CategoriesController : Controller
-    {
+  public class CategoriesController : Controller
+  {
 
     private readonly ToDoListContext _db;
 
@@ -23,7 +22,7 @@ namespace ToDoList.Controllers
       List<Category> model = _db.Categories.ToList();
       return View(model);
     }
-    
+
     public ActionResult Create()
     {
       return View();
@@ -36,10 +35,10 @@ namespace ToDoList.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-    
+
     public ActionResult Details(int id)
     {
-      Category thisCategory = _db.Categories.FirstOrDefault(catogory => catogory.CategoryId == id);    
+      Category thisCategory = _db.Categories.FirstOrDefault(catogory => catogory.CategoryId == id);
       thisCategory.Items = _db.Items.Where(item => item.CategoryId == id).ToList();
       return View(thisCategory);
     }
@@ -57,7 +56,7 @@ namespace ToDoList.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-    
+
     public ActionResult Delete(int id)
     {
       var thisCategory = _db.Categories.FirstOrDefault(categories => categories.CategoryId == id);
