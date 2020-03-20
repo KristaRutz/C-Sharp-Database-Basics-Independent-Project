@@ -13,11 +13,11 @@
   </div>
   <div class="form-group">
     @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name, new {@Class = "form-control"})
   </div>
   <div class="form-group">
     @Html.LabelFor(model => model.Employee)
-    @Html.DropDownList("EmployeeId")
+    @Html.DropDownList("EmployeeId", ViewBag.EmployeeId, "Select Employee", new { @class = "form-control form-control-sm" })
   </div>
     <input class="btn btn-light form-group" type="submit" value="Save" />
 }

@@ -4,9 +4,13 @@
 
 @model Organization.Models.Client
 
-<h2>Client Details</h2>
+<h1>@Html.DisplayFor(model => model.Name)</h1>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)<h3>
+<h2>Client Details</h2>
+<ul>
+  <li>Client ID Number: @Html.DisplayFor(model => model.EmployeeId)</li>
+  <li>Employee Liaison: @ViewBag.EmployeeLiaison.Name</li>
+</ul>
   @* DisplayNameFor() displays property name while DisplayFor() displays the value of that property. *@
 <p class="btn btn-light">@Html.ActionLink("Back to list", "Index")</p>
 <p class="btn btn-light">@Html.ActionLink("Edit Client", "Edit", new { id = Model.ClientId })</p>

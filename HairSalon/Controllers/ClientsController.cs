@@ -40,15 +40,15 @@ namespace Organization.Controllers
 
     public ActionResult Details(int id)
     {
-      Client thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
-      // FirstOrDefault() uses a lambda. We can read this as: start by looking at db.Clients (our clients table), then find any clients where the ClientId of an client is equal to the id we've passed into this method.
+      Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+      ViewBag.EmployeeLiaison = _db.Employees.FirstOrDefault(employee => employee.EmployeeId == thisClient.EmployeeId);
       return View(thisClient);
     }
 
     public ActionResult Edit(int id)
     {
       var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
-      ViewBag.EmployeeId = new SelectList(_db.Employees, "EmployeeId", "Name");
+      ViewBag.EmployeeId = new SelectList(_db.Employees, "EmployeeId", "Name", thisClient.EmployeeId);
       return View(thisClient);
     }
 
