@@ -38,41 +38,41 @@ Download or clone the repository to run this program locally! _This program requ
 
 ## Specifications
 
-- Database table and column names follow both the specific requirements for this project and general .NET naming conventions.
-- Instructions for re-creating your database are thorough and clear.
-- There is a one-to-many relationship set up correctly in the database.
-- CREATE functionality is included for one class and CREATE and VIEW functionality are included for the other class.
-- Entity is used for communication with the database
-- The project demonstrates understanding of this week's concepts.
-- The project is in a polished, portfolio-quality state.
-- Project uses two or more controllers.
-- GET and POST requests/responses are used successfully.
-- MVC routes follow RESTful conventions.
-- Logic is easy to understand.
-- Build files are included in .gitignore file and are not be tracked by Git
-- Code and Git documentation follows best practices (descriptive variables names, proper indentation and spacing, separation between front and back-end logic, detailed commit messages in the correct tense, and a well-formatted README).
+[ ] Database table and column names follow both the specific requirements for this project and general .NET naming conventions.
+[ ] Instructions for re-creating your database are thorough and clear.
+[x] There is a one-to-many relationship set up correctly in the database.
+[ ] CREATE functionality is included for one class and CREATE and VIEW functionality are included for the other class.
+[x] Entity is used for communication with the database
+[x] The project demonstrates understanding of this week's concepts.
+[ ] The project is in a polished, portfolio-quality state.
+[x] Project uses two or more controllers.
+[x] GET and POST requests/responses are used successfully.
+[ ] MVC routes follow RESTful conventions.
+[ ] Logic is easy to understand.
+[ ] Build files are included in .gitignore file and are not be tracked by Git
+[ ] Code and Git documentation follows best practices (descriptive variables names, proper indentation and spacing, separation between front and back-end logic, detailed commit messages in the correct tense, and a well-formatted README).
 
 ## User Stories
 
-| As a _User-Type_,                                   | I want...                                                                                          | so that...                                                                                           |
-| :-------------------------------------------------- | :------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
-| As Pierre, owner and head baker of Pierre's Bakery, | I want to track the vendors that purchase baked goods                                              | so that I have all of the vendor information contained in one place                                  |
-| As Pierre                                           | I want vendors that I add to be stored                                                             | so that I can access them as often as I need                                                         |
-| As Pierre,                                          | I want to be able to customize a vendor's name, description, and orders                            | so that I can have flexibility on future accounts                                                    |
-| As Pierre,                                          | I want to see the orders belonging to those vendors                                                | to simplify billing on each account                                                                  |
-| As Pierre,                                          | I want title, description, price, and date for orders                                              | so that my tracker is useful for filling orders and accounting                                       |
-| As Pierre,                                          | I want a splash page!                                                                              | so that I am cheered up before doing boring paperwork                                                |
-| As Pierre,                                          | I want to be able to delete orders or vendors                                                      | in case of cancellations                                                                             |
-| As Pierre,                                          | I want to be able to edit orders or vendors                                                        | in case of changes, or user error                                                                    |
-| As Pierre's tax consultant                          | I want Pierre to be able to note if and when orders were filled and if and when they were paid for | so that he doesn't have to give me paper receipts or search through old emails when tax season comes |
+| As a _User-Type_,          | I want...                                                               | so that...                                                                                           |
+| :------------------------- | :---------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
+| As Pierre,                 | I want to track the vendors that purchase baked goods                   | so that I have all of the vendor information contained in one place                                  |
+| As Pierre                  | I want vendors that I add to be stored                                  | so that I can access them as often as I need                                                         |
+| As Pierre,                 | I want to be able to customize a vendor's name, description, and orders | so that I can have flexibility on future accounts                                                    |
+| As Pierre,                 | I want to see the orders belonging to those vendors                     | to simplify billing on each account                                                                  |
+| As Pierre,                 | I want title, description, price, and date for orders                   | so that my tracker is useful for filling orders and accounting                                       |
+| As Pierre,                 | I want a splash page!                                                   | so that I am cheered up before doing boring paperwork                                                |
+| As Pierre,                 | I want to be able to delete orders or vendors                           | in case of cancellations                                                                             |
+| As Pierre,                 | I want to be able to edit orders or vendors                             | in case of changes, or user error                                                                    |
+| As Pierre's tax consultant | I want notes on when orders were filled and paid for                    | so that he doesn't have to give me paper receipts or search through old emails when tax season comes |
 
 ## Known Bugs
 
-- Delete option not yet functional
+_No known bugs_
 
 ## Support and contact details
 
-Please contact me if you run into any issues or have questions, ideas or concerns. I can be contacted at <krista.rutz@pomona.edu>. Feel free to create a pull request for updates - _contributions to the code are encouraged!_
+Please contact me if you run into any issues or have questions, ideas or concerns. I can be contacted at <krista.rutz@pomona.edu>. Feel free to fork and create pull requests for updates - _contributions to the code are encouraged!_
 
 ### License
 
