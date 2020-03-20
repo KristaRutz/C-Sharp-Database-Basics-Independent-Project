@@ -3,9 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  <link rel='stylesheet' href="~/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Abel|Pacifico&display=swap" rel="stylesheet"> 
   <title>Client Organizer</title>
 </head>
 <body>
-  @RenderBody()
+  <div class="container">
+      @RenderBody() 
+      @Html.Partial("Footer")
+  </div>
 </body>
 </html>
