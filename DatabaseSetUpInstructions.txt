@@ -11,11 +11,3 @@ CREATE TABLE `clients` (
   `EmployeeId` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ClientId`)
 );
-CREATE TABLE `client_items` (
-  `ClientItemId` int(11) NOT NULL AUTO_INCREMENT,
-  `ClientId` int(11) NOT NULL DEFAULT '0',
-  `Name` varchar(45) DEFAULT NULL,
-  `Description` varchar(255) DEFAULT NULL,
-  `TimeCreated` datetime NOT NULL,
-  PRIMARY KEY (`ClientItemId`)
-);

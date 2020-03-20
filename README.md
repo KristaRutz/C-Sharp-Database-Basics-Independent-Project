@@ -1,4 +1,4 @@
-# Employee-Client Relationship Tracker (C# Web Application)
+# Hair Salon Employee-Client Relationship Tracker (C# Web Application)
 
 #### A web-based application to organize employees and clients, where the user can input new hires and create clients under the emoloyees, hosted on [GitHub](https://github.com/KristaRutz/C-Sharp-Database-Basics-Independent-Project). _Last Updated 03.13.2020._
 
