@@ -20,6 +20,7 @@ namespace Organization.Controllers
     public ActionResult Index()
     {
       List<Client> model = _db.Clients.Include(clients => clients.Employee).ToList();
+      ViewBag.EmployeeCount = _db.Clients.ToList().Count;
       return View(model);
     }
 

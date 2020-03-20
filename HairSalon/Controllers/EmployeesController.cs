@@ -39,7 +39,7 @@ namespace Organization.Controllers
     public ActionResult Details(int id)
     {
       Employee thisEmployee = _db.Employees.FirstOrDefault(catogory => catogory.EmployeeId == id);
-      thisEmployee.Items = _db.Items.Where(client => client.EmployeeId == id).ToList();
+      thisEmployee.Clients = _db.Clients.Where(client => client.EmployeeId == id).ToList();
       return View(thisEmployee);
     }
 
