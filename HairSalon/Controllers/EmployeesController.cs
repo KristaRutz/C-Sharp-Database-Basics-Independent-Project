@@ -1,25 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using Organization.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace ToDoList.Controllers
+namespace Organization.Controllers
 {
-  public class CategoriesController : Controller
+  public class EmployeesController : Controller
   {
 
-    private readonly ToDoListContext _db;
+    private readonly OrganizationContext _db;
 
-    public CategoriesController(ToDoListContext db)
+    public EmployeesController(OrganizationContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      List<Category> model = _db.Categories.ToList();
+      List<Employee> model = _db.Employees.ToList();
       return View(model);
     }
 
@@ -29,45 +29,45 @@ namespace ToDoList.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Category category)
+    public ActionResult Create(Employee employee)
     {
-      _db.Categories.Add(category);
+      _db.Employees.Add(employee);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      Category thisCategory = _db.Categories.FirstOrDefault(catogory => catogory.CategoryId == id);
-      thisCategory.Items = _db.Items.Where(item => item.CategoryId == id).ToList();
-      return View(thisCategory);
+      Employee thisEmployee = _db.Employees.FirstOrDefault(catogory => catogory.EmployeeId == id);
+      thisEmployee.Items = _db.Items.Where(client => client.EmployeeId == id).ToList();
+      return View(thisEmployee);
     }
 
     public ActionResult Edit(int id)
     {
-      var thisCategory = _db.Categories.FirstOrDefault(categories => categories.CategoryId == id);
-      return View(thisCategory);
+      var thisEmployee = _db.Employees.FirstOrDefault(employees => employees.EmployeeId == id);
+      return View(thisEmployee);
     }
 
     [HttpPost]
-    public ActionResult Edit(Category category)
+    public ActionResult Edit(Employee employee)
     {
-      _db.Entry(category).State = EntityState.Modified;
+      _db.Entry(employee).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Delete(int id)
     {
-      var thisCategory = _db.Categories.FirstOrDefault(categories => categories.CategoryId == id);
-      return View(thisCategory);
+      var thisEmployee = _db.Employees.FirstOrDefault(employees => employees.EmployeeId == id);
+      return View(thisEmployee);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      var thisCategory = _db.Categories.FirstOrDefault(categories => categories.CategoryId == id);
-      _db.Categories.Remove(thisCategory);
+      var thisEmployee = _db.Employees.FirstOrDefault(employees => employees.EmployeeId == id);
+      _db.Employees.Remove(thisEmployee);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

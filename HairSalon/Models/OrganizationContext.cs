@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace ToDoList.Models
+namespace Organization.Models
 {
-  public class ToDoListContext : DbContext
+  public class OrganizationContext : DbContext
   {
-    public virtual DbSet<Category> Categories { get; set; }
-    public DbSet<Item> Items { get; set; }
+    public virtual DbSet<Employee> Employees { get; set; }
+    public DbSet<Client> Clients { get; set; }
 
 
-    public ToDoListContext(DbContextOptions options) : base(options) { }
+    public OrganizationContext(DbContextOptions options) : base(options) { }
   }
 }

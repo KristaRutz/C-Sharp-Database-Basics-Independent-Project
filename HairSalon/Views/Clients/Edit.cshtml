@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Item
+@model Organization.Models.Client
 
 <h2>Edit</h2>
 
@@ -10,12 +10,12 @@
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.ItemId)
+    @Html.HiddenFor(model => model.ClientId)
 
     @Html.LabelFor(model => model.Description)
     @Html.EditorFor(model => model.Description)
-    @Html.LabelFor(model => model.Category)
-    @Html.DropDownList("CategoryId")
+    @Html.LabelFor(model => model.Employee)
+    @Html.DropDownList("EmployeeId")
     
     <input type="submit" value="Save" />
 }

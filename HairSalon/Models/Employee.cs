@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 
-namespace ToDoList.Models
+namespace Organization.Models
 {
-    public class Category
+  public class Employee
+  {
+    public Employee()
     {
-        public Category()
-        {
-            this.Items = new List<Item>();
-        }
-
-        public int CategoryId { get; set; }
-        public string Name { get; set; }
-        public virtual ICollection<Item> Items { get; set; }
+      this.Clients = new List<Client>();
     }
+
+    public int EmployeeId { get; set; }
+    public string Name { get; set; }
+    public virtual ICollection<Client> Clients { get; set; }
+  }
 }

@@ -1,74 +1,75 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using Organization.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace ToDoList.Controllers
+namespace Organization.Controllers
 {
-  public class ItemsController : Controller
+  public class ClientsController : Controller
   {
-    private readonly ToDoListContext _db;
 
-    public ItemsController(ToDoListContext db)
+    private readonly OrganizationContext _db;
+
+    public ClientsController(OrganizationContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      List<Item> model = _db.Items.Include(items => items.Category).ToList();
+      List<Client> model = _db.Clients.Include(clients => clients.Employee).ToList();
       return View(model);
     }
 
     public ActionResult Create()
     {
-      ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
+      ViewBag.EmployeeId = new SelectList(_db.Employees, "EmployeeId", "Name");
       return View();
     }
 
     [HttpPost]
-    public ActionResult Create(Item item)
+    public ActionResult Create(Client client)
     {
-      _db.Items.Add(item);
+      _db.Clients.Add(client);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      Item thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-      // FirstOrDefault() uses a lambda. We can read this as: start by looking at db.Items (our items table), then find any items where the ItemId of an item is equal to the id we've passed into this method.
-      return View(thisItem);
+      Client thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
+      // FirstOrDefault() uses a lambda. We can read this as: start by looking at db.Clients (our clients table), then find any clients where the ClientId of an client is equal to the id we've passed into this method.
+      return View(thisClient);
     }
 
     public ActionResult Edit(int id)
     {
-      var thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-      ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
-      return View(thisItem);
+      var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
+      ViewBag.EmployeeId = new SelectList(_db.Employees, "EmployeeId", "Name");
+      return View(thisClient);
     }
 
     [HttpPost]
-    public ActionResult Edit(Item item)
+    public ActionResult Edit(Client client)
     {
-      _db.Entry(item).State = EntityState.Modified;
+      _db.Entry(client).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Delete(int id)
     {
-      var thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-      return View(thisItem);
+      var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
+      return View(thisClient);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      var thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-      _db.Items.Remove(thisItem);
+      var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
+      _db.Clients.Remove(thisClient);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

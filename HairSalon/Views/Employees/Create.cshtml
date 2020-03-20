@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Category
+@model Organization.Models.Employee
 
 <h4>Add a new task</h4>
 @using (Html.BeginForm())
@@ -10,6 +10,6 @@
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
 
-  <input type="submit" value="Add new category of task" />
+  <input type="submit" value="Add new employee of task" />
 }
-<p>@Html.ActionLink("Show all categories", "Index")</p>
+<p>@Html.ActionLink("Show all employees", "Index")</p>
