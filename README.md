@@ -1,70 +1,89 @@
-# Vendor Tracker (C# Web Application)
+# Employee-Client Relationship Tracker (C# Web Application)
 
-#### A web-based application to organize vendors and orders, where the user can input new vendors and create orders under the vendors, hosted on [GitHub](https://github.com/KristaRutz/VendorList.Solution). _Last Updated 03.13.2020._
+#### A web-based application to organize employees and clients, where the user can input new hires and create clients under the emoloyees, hosted on [GitHub](https://github.com/KristaRutz/C-Sharp-Database-Basics-Independent-Project). _Last Updated 03.13.2020._
 
 #### By _**Krista Rutz**_
 
 ## Description
 
-This application, utilizing an MVC framework, lets the user, in this case a small bakery, keep track of vendors and their orders. Vendors can be added dynamically in a form, and orders for bread and pastries can be made under each vendor account. The app implements this with C# and .NET Core.
+This application, utilizing an MVC framework, lets the user, in this case a hair salon, keep track of employees and their clients. Employees can be added dynamically in a form, and clients can be listed under each employee account. The app implements this with C#, .NET Core, and SQL.
 
-This project uses RESTful routing, the Razor View Engine, and MSTest. It was created for the Epicodus week 10 friday independent project, on week 3 of C# and .NET course: Basic Web Applications.
+This project uses SQL, Entity Framework, RESTful routing, the Razor View Engine, and MVC conventions. It was created for the Epicodus week 11 friday independent project, on week 4 of C# and .NET course: Database Basics.
 
-The source code is hosted on [GitHub](https://github.com/KristaRutz/VendorList.Solution).
+The source code is hosted on [GitHub](https://github.com/KristaRutz/C-Sharp-Database-Basics-Independent-Project).
 
 ## Installation / Set-up
 
-Download or clone the repository to run this program locally! _This program requires .NET Core SDK to run. [Here is a free tutorial](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-c-and-net) for installing .NET on Mac or Windows 10._
+Download or clone the repository to run this program locally!
 
-- Download or clone this repo.
+_This program requires .NET Core SDK to run. [Here is a free tutorial](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-c-and-net) for installing .NET on Mac or Windows 10._
+
+_This program also makes use of SQL databases. We recommend using MySQL Workbench to build your databases. [Here is a free tutorial](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql) for installing MySQL WorkBench and MySQL Community Server on Mac or Windows 10._
+
+- **Download or clone this repo.**
   - **To Download ZIP:**
-    - Select "Download" on the [GitHub Repository](https://github.com/KristaRutz/VendorList.Solution) site
+    - Select "Download" on the [GitHub Repository](https://github.com/KristaRutz/C-Sharp-Database-Basics-Independent-Project) site
     - Once downloaded, open the ZIP and extract files. The new folder will be created as 'VendorList.Solution'.
   - **To Clone:**
-    - Clone from command line into your Desktop: `$ git clone https://github.com/KristaRutz/VendorList.Solution`
-    - The new directory will be created as 'Desktop/VendorList.Solution'.
-- Once you have stored the files locally, execute the following commands.
+    - Clone from command line into your Desktop: `$ git clone https://github.com/KristaRutz/C-Sharp-Database-Basics-Independent-Project.git`
+    - The new directory will be created as 'Desktop/C-Sharp-Database-Basics-Independent-Project'.
+- **Build your local databases.**
+  - **To construct in the command line:**
+    - run your MySQL server from the command line.
+    - use the commands listed in the 'DataBaseSetUpInstructions.txt' file in the root directory of this project.
+  - **To construct import from my file:**
+    - Open MySQL Workbench. In the Navigator > Administration window, select Data Import/Restore.
+    - In Import Options select Import from Self-Contained File.
+    - Navigate to the sql file at 'DumpStructure.sql' in the root directory of this project.
+    - Under Default Schema to be Imported To, select the New button.
+    - Enter the desired name of your database. _The program is currently set to look for a database called 'krista_rutz'. If you use a different name, you will need to change the connection string in appsettings.json to reflect this._
+    - Click Ok.
+    - Click Start Import.
+    - Reopen the Navigator > Schemas tab. Right click and select Refresh All to see the database appear.
+- **Once you have stored the files locally and built databases, execute the following commands.**
   - Navigate to the application directory: `$ cd VendorList.Solution/VendorList`
   - `dotnet build`
   - `dotnet run`
-- Upon success, the program will begin running in your console.
+- **Upon success, the program will begin running on a local server.**
 
 ## Technologies Used
 
 - C#
 - .NET Core 2.2
+- MySQL Server and MySQL Workbench
+- Entity Framework
 - HTML with Razor
 - CSS: Custom and Bootstrap
 
 ## Specifications
 
-[ ] Database table and column names follow both the specific requirements for this project and general .NET naming conventions.
-[ ] Instructions for re-creating your database are thorough and clear.
-[x] There is a one-to-many relationship set up correctly in the database.
-[ ] CREATE functionality is included for one class and CREATE and VIEW functionality are included for the other class.
-[x] Entity is used for communication with the database
-[x] The project demonstrates understanding of this week's concepts.
-[ ] The project is in a polished, portfolio-quality state.
-[x] Project uses two or more controllers.
-[x] GET and POST requests/responses are used successfully.
-[ ] MVC routes follow RESTful conventions.
-[ ] Logic is easy to understand.
-[ ] Build files are included in .gitignore file and are not be tracked by Git
-[ ] Code and Git documentation follows best practices (descriptive variables names, proper indentation and spacing, separation between front and back-end logic, detailed commit messages in the correct tense, and a well-formatted README).
+- [x] Database table and column names follow both the specific requirements for this project and general .NET naming conventions.
+- [x] Instructions for re-creating your database are thorough and clear.
+- [x] There is a one-to-many relationship set up correctly in the database.
+- [ ] CREATE functionality is included for one class and CREATE and VIEW functionality are included for the other class.
+- [x] Entity is used for communication with the database
+- [x] The project demonstrates understanding of this week's concepts.
+- [x] The project is in a polished, portfolio-quality state.
+- [x] Project uses two or more controllers.
+- [x] GET and POST requests/responses are used successfully.
+- [x] MVC routes follow RESTful conventions.
+- [x] Logic is easy to understand.
+- [x] Build files are included in .gitignore file and are not be tracked by Git
+- [x] Code and Git documentation follows best practices (descriptive variables names, proper indentation and spacing, separation between front and back-end logic, detailed commit messages in the correct tense, and a well-formatted README).
 
 ## User Stories
 
-| As a _User-Type_,          | I want...                                                               | so that...                                                                                           |
-| :------------------------- | :---------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
-| As Pierre,                 | I want to track the vendors that purchase baked goods                   | so that I have all of the vendor information contained in one place                                  |
-| As Pierre                  | I want vendors that I add to be stored                                  | so that I can access them as often as I need                                                         |
-| As Pierre,                 | I want to be able to customize a vendor's name, description, and orders | so that I can have flexibility on future accounts                                                    |
-| As Pierre,                 | I want to see the orders belonging to those vendors                     | to simplify billing on each account                                                                  |
-| As Pierre,                 | I want title, description, price, and date for orders                   | so that my tracker is useful for filling orders and accounting                                       |
-| As Pierre,                 | I want a splash page!                                                   | so that I am cheered up before doing boring paperwork                                                |
-| As Pierre,                 | I want to be able to delete orders or vendors                           | in case of cancellations                                                                             |
-| As Pierre,                 | I want to be able to edit orders or vendors                             | in case of changes, or user error                                                                    |
-| As Pierre's tax consultant | I want notes on when orders were filled and paid for                    | so that he doesn't have to give me paper receipts or search through old emails when tax season comes |
+| As a _User-Type_,      | I want...                                                                                                                        | so that...                                          |
+| :--------------------- | :------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------- |
+| As the business owner  | I want employees that I add to be stored in a database                                                                           | so that I can access them as often as I need        |
+| As the business owner, | I want to add new employees                                                                                                      | so that I can view the complete list                |  |
+| As the salon owner,    | I need to be able to select a stylist, see their details, and see a list of all clients that belong to that stylist              | to stay organized                                   |
+| As the business owner, | I want to see the clients belonging to those employees                                                                           | to simplify payment accounts                        |
+| As the salon owner,    | I need to be able to add new clients to a specific stylist (I should not be able to add a client if no stylists have been added) | so that I don't have unassigned clients by mistake. |
+| As the business owner, | I want name and preferred employee for clients visible                                                                           | so that my tracker is useful from both sides        |
+| As the business owner, | I want a splash page                                                                                                             | so that I can access any sides of my site           |
+| As the business owner, | I want to be able to delete clients or employees                                                                                 | in case of changes to the business                  |
+| As the business owner, | I want to be able to edit clients or employees                                                                                   | in case of changes, or user error                   |
 
 ## Known Bugs
 
