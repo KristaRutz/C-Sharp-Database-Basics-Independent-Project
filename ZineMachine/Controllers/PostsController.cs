@@ -17,6 +17,12 @@ namespace ZineMachine.Controllers
       _db = db;
     }
 
+    public ActionResult Index()
+    {
+      List<Post> model = _db.Posts.ToList();
+      return View(model);
+    }
+
     public ActionResult Create(int zineId)
     {
 			Zine thisZine = _db.Zines.FirstOrDefault(zines => zines.ZineId == zineId);
